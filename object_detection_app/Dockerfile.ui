@@ -1,0 +1,8 @@
+# UI Backend Dockerfile
+FROM python:3.9-slim
+WORKDIR /app
+COPY ui_backend.py requirements.txt ./
+COPY templates/ templates/
+RUN pip install -r requirements.txt
+EXPOSE 5000
+CMD ["python", "ui_backend.py"]

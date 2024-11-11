@@ -1,0 +1,8 @@
+# AI Backend Dockerfile
+FROM python:3.9-slim
+WORKDIR /app
+COPY ai_backend.py requirements.txt ./
+COPY models/ models/
+RUN pip install -r requirements.txt
+EXPOSE 5001
+CMD ["python", "ai_backend.py"]
